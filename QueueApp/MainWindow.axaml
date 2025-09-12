@@ -1,0 +1,192 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vlc="using:LibVLCSharp.Avalonia"
+        x:Class="QueueApp.MainWindow"
+        Title="Aplikasi Antrian"
+        Width="1200" Height="700"
+        MinWidth="800" MinHeight="600"
+        WindowStartupLocation="CenterScreen"
+        Background="#f5f5f5">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <!-- Video area - 60% width -->
+            <ColumnDefinition Width="3*"/>
+            <!-- Queue info area - 40% width -->
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Video Player Area -->
+        <Border Grid.Column="0" 
+                Background="#e8e4f0" 
+                BorderBrush="#d0d0d0" 
+                BorderThickness="1"
+                Margin="10">
+            <Grid>
+                <!-- Video View -->
+                <vlc:VideoView x:Name="videoView" />
+                
+                <!-- Video Placeholder/Label when no video -->
+                <TextBlock Text="LETAK VIDEO" 
+                           FontSize="32" 
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"
+                           Foreground="#666666"
+                           x:Name="videoPlaceholder"/>
+            </Grid>
+        </Border>
+        
+        <!-- Queue Information Area -->
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Current Queue Number (Teller 1) -->
+            <Border Grid.Row="0" 
+                    Background="#2e7d32" 
+                    BorderBrush="#1b5e20" 
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!-- Teller Info -->
+                    <TextBlock Grid.Row="0"
+                               Text="TELLER 1"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               Margin="0,15,0,5"/>
+                    
+                    <!-- "Sekarang Dilayani" Label -->
+                    <TextBlock Grid.Row="1"
+                               Text="SEKARANG DILAYANI"
+                               FontSize="14"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               Margin="0,0,0,10"/>
+                    
+                    <!-- Current Queue Number -->
+                    <Viewbox Grid.Row="2" 
+                             Stretch="Uniform"
+                             Margin="20,10">
+                        <TextBlock x:Name="currentQueueNumber1"
+                                   Text="A001"
+                                   FontSize="80"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"/>
+                    </Viewbox>
+                    
+                    <!-- Status -->
+                    <TextBlock Grid.Row="3"
+                               x:Name="status1"
+                               Text="● AKTIF"
+                               FontSize="12"
+                               Foreground="#c8e6c9"
+                               HorizontalAlignment="Center"
+                               Margin="0,5,0,15"/>
+                </Grid>
+            </Border>
+            
+            <!-- Next Queue Number (Teller 2) -->
+            <Border Grid.Row="1" 
+                    Background="#2e7d32" 
+                    BorderBrush="#1b5e20" 
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!-- Teller Info -->
+                    <TextBlock Grid.Row="0"
+                               Text="TELLER 2"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               Margin="0,15,0,5"/>
+                    
+                    <!-- "Sekarang Dilayani" Label -->
+                    <TextBlock Grid.Row="1"
+                               Text="SEKARANG DILAYANI"
+                               FontSize="14"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               Margin="0,0,0,10"/>
+                    
+                    <!-- Current Queue Number -->
+                    <Viewbox Grid.Row="2" 
+                             Stretch="Uniform"
+                             Margin="20,10">
+                        <TextBlock x:Name="currentQueueNumber2"
+                                   Text="B005"
+                                   FontSize="80"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"/>
+                    </Viewbox>
+                    
+                    <!-- Status -->
+                    <TextBlock Grid.Row="3"
+                               x:Name="status2"
+                               Text="● AKTIF"
+                               FontSize="12"
+                               Foreground="#c8e6c9"
+                               HorizontalAlignment="Center"
+                               Margin="0,5,0,15"/>
+                </Grid>
+            </Border>
+        </Grid>
+        
+        <!-- Optional: Status Bar at bottom -->
+        <Border Grid.ColumnSpan="2"
+                Background="#37474f"
+                Height="40"
+                VerticalAlignment="Bottom">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Grid.Column="0"
+                           Text="Sistem Antrian - Aktif"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           Margin="15,0"/>
+                
+                <TextBlock Grid.Column="1"
+                           x:Name="currentTime"
+                           Text="12:34:56"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           Margin="15,0"/>
+                
+                <TextBlock Grid.Column="2"
+                           x:Name="currentDate"
+                           Text="Kamis, 11 September 2025"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           Margin="15,0"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
