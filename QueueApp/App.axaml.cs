@@ -6,7 +6,7 @@ namespace QueueApp;
 
 public partial class App : Application
 {
-    private QueueManager? queueManager;
+    // private QueueManager? queueManager;
     
     public override void Initialize()
     {
@@ -21,14 +21,14 @@ public partial class App : Application
             desktop.MainWindow = mainWindow;
             
             // Initialize queue manager
-            queueManager = new QueueManager(mainWindow);
+            // queueManager = new QueueManager(mainWindow);
             
             // Handle application shutdown
             desktop.ShutdownMode = Avalonia.Controls.ShutdownMode.OnMainWindowClose;
-            desktop.Exit += (sender, e) =>
-            {
-                queueManager?.StopAutoAdvance();
-            };
+            // desktop.Exit += (sender, e) =>
+            // {
+            //     queueManager?.StopAutoAdvance();
+            // };
         }
 
         base.OnFrameworkInitializationCompleted();

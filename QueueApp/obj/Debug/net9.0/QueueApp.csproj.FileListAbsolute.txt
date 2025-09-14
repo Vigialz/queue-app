@@ -918,3 +918,5 @@ C:\Users\aryaz\RiderProjects\QueueApp\QueueApp\bin\Debug\net9.0\libvlc\win-x86\p
 C:\Users\aryaz\RiderProjects\QueueApp\QueueApp\bin\Debug\net9.0\libvlc\win-x86\plugins\visualization\libprojectm_plugin.dll
 C:\Users\aryaz\RiderProjects\QueueApp\QueueApp\bin\Debug\net9.0\libvlc\win-x86\plugins\visualization\libvisual_plugin.dll
 C:\Users\aryaz\RiderProjects\QueueApp\QueueApp\bin\Debug\net9.0\sample.mp4
+C:\Users\aryaz\RiderProjects\QueueApp\QueueApp\obj\Debug\net9.0\QueueApp.sourcelink.json
+C:\Users\aryaz\RiderProjects\QueueApp\QueueApp\bin\Debug\net9.0\sample1.mp4

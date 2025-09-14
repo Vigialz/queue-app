@@ -28,5 +28,9 @@
       <Content Include="sample.mp4">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="sample1.mp4" />
+      <Content Include="sample1.mp4">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 </Project>
